@@ -1,8 +1,8 @@
 import { apiInitializer } from "discourse/lib/api";
 import loadScript from "discourse/lib/load-script";
 
-async function applyRapidoc(element) {
-  const apidocs = element.querySelectorAll("pre[data-code-wrap=apidoc]");
+async function applySwaggerUi(element) {
+  const apidocs = element.querySelectorAll("pre[data-code-wrap=swagger]");
 
   if (!apidocs.length) {
     return;
@@ -21,40 +21,35 @@ async function applyRapidoc(element) {
       return;
     }
   });
-
+  let i = 0;
   apidocs.forEach((apidoc) => {
     const codeBlock = apidoc.querySelector("code");
 
     if (!codeBlock) {
       return;
     }
+    i++;
 
     const promise = new Promise((resolve) => resolve(codeBlock.textContent));
     promise
       .then((spec) => {
         apidoc.outerHTML = `
-        <rapi-doc 
-          spec-url="${spec}"
-          render-style="focussed"
-          layout="column"
-          allow-advanced-search="true"
-          allow-search="false"
-          show-header="false"
-          show-info="true" 
-          show-curl-before-try="false"
-          allow-server-selection="false" 
-          allow-api-list-style-selection="false"
-          allow-spec-file-download="true"
-          allow-spec-file-load="false"
-          allow-authentication="true"
-          persist-auth="true"
-          show-method-in-nav-bar="as-colored-text"
-          schema-description-expanded="true"
-          theme="${theme === "dark" ? "dark" : "light"}" 
-          nav-bg-color="${theme === "dark" ? "#323334" : "#ebeced"}"
-        > 
-        </rapi-doc>
-        <br/>
+        <div id="swagger-ui-${i}"></div>
+        <script>
+        window.onload = function() {
+          const ui = SwaggerUIBundle({
+            url: "${spec}",
+            dom_id: '#swagger-ui-${i}',
+            deepLinking: true,
+            presets: [
+              SwaggerUIBundle.presets.apis,
+              SwaggerUIStandalonePreset
+            ]
+          })
+
+          window.ui = ui
+        }
+        </script>
         `;
       })
       .catch((e) => {
@@ -70,8 +65,8 @@ export default apiInitializer("1.13.0", (api) => {
   api.decorateCookedElement(
     async (elem, helper) => {
       const id = helper ? `post_${helper.getModel().id}` : "composer";
-      applyRapidoc(elem, id);
+      applySwaggerUi(elem, id);
     },
-    { id: "discourse-rapidoc-theme-component" }
+    { id: "discourse-swagger-theme-component" }
   );
 });

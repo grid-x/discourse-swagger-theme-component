@@ -13,9 +13,6 @@
     "prettier": "^2.8.8"
   },
   "dependencies": {
-    "@r2wc/react-to-web-component": "^2.0.4",
-    "swagger-ui": "^5.26.0",
-    "swagger-ui-react": "^5.26.0"
   },
   "scarfSettings": {
     "enabled": false
