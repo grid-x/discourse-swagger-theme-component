@@ -4,6 +4,6 @@
   "assets": {
     "rapidoc_js": "assets/rapidoc-9.3.8.min.js"
   },
-  "name": "Discourse Rapidoc",
+  "name": "Discourse Swagger UI",
   "component": true
 }
