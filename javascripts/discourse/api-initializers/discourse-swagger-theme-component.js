@@ -37,6 +37,7 @@ async function applySwaggerUi(element) {
         apidoc.outerHTML = `
         <div id="swagger-ui-${i}"></div>
         <script>
+        window.onload = function() {
           const ui = SwaggerUIBundle({
             url: "${spec}",
             dom_id: '#swagger-ui-${i}',
@@ -48,6 +49,7 @@ async function applySwaggerUi(element) {
           })
 
           window.ui = ui
+      }
         </script>
         `;
       })
