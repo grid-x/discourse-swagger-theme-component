@@ -3,7 +3,7 @@
   "license_url": "https://github.com/grid-x/discourse-rapidoc-theme-component/blob/main/LICENSE",
   "assets": {
     "swagger_ui_bundle_js": "assets/swagger-ui-bundle.js",
-    "swagger_ui_standalone_preset_js": "assets/swagger-ui-standalone-preset.js",
+    "swagger_ui_standalone_preset_js": "assets/swagger-ui-standalone-preset.js"
   },
   "name": "Discourse Swagger UI",
   "component": true
