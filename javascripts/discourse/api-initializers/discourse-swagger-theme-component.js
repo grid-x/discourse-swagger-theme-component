@@ -36,11 +36,12 @@ async function applySwaggerUi(element) {
       .then((spec) => {
         apidoc.outerHTML = `
         <div id="swagger-ui-${i}"></div>
-        <script>
-        window.onload = function() {
+        `;
+        return spec;
+      }).then((spec)=>{
           const ui = SwaggerUIBundle({
-            url: "${spec}",
-            dom_id: '#swagger-ui-${i}',
+            url: `${spec}`,
+            dom_id: `#swagger-ui-${i}`,
             deepLinking: true,
             presets: [
               SwaggerUIBundle.presets.apis,
@@ -49,9 +50,6 @@ async function applySwaggerUi(element) {
           })
 
           window.ui = ui
-      }
-        </script>
-        `;
       })
       .catch((e) => {
         apidoc.innerText = e?.message || e;
