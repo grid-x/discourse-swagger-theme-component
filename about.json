@@ -4,7 +4,7 @@
   "assets": {
     "swagger-ui-bundle_js": "assets/swagger-ui-bundle.js",
     "swagger-ui-standalone-preset_js": "assets/swagger-ui-standalone-preset.js",
-    "swagger-ui_css": "assets/swagger-ui_css"
+    "swagger-ui_css": "assets/swagger-ui.css"
   },
   "name": "Discourse Swagger UI",
   "component": true
