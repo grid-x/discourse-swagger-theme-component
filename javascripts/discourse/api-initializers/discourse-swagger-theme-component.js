@@ -8,7 +8,8 @@ async function applySwaggerUi(element) {
     return;
   }
 
-  await loadScript(settings.theme_uploads_local.rapidoc_js);
+  await loadScript(settings.theme_uploads_local["swagger-ui-bundle_js"]);
+  await loadScript(settings.theme_uploads_local["swagger-ui-standalone-preset_js"]);
 
   const theme =
     getComputedStyle(document.body).getPropertyValue("--scheme-type").trim() ===
