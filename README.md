@@ -1,6 +1,6 @@
-# Discourse Rapidoc Theme Component
+# Discourse Swagger Theme Component
 
-This is a [Discourse theme component](https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966) that uses [RapiDoc](https://rapidocweb.com/) to render OpenAPI specifications inline in Discourse topics.
+This is a [Discourse theme component](https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966) that uses [Swagger UI](https://github.com/swagger-api/swagger-ui) to render OpenAPI specifications inline in Discourse topics.
 
 Based off the nice official [Discourse mermaid component](https://github.com/discourse/discourse-mermaid-theme-component).
 
@@ -17,15 +17,15 @@ https://petstore.swagger.io/v2/swagger.json
 If specification is not publicly accessible, you can attach the specification file to your post and copy the URL after the file has been uploaded.
 
 Here's how it could look like
-![rapidoc in discourse](image.png)
+![swagger in discourse](image.png)
 
 ## Development
 
-Clone, `yarn` and `yarn dev` and play around with the rapidoc API in [./playground/component.html](./playground/component.html).
+Clone, `yarn` and `yarn dev` and play around with the swagger-ui API in [./playground/component.html](./playground/component.html).
 Review the locally served page.
 
 The page is an approximation of how the component will be rendered within discourse.
 It renders the [petstore sample](./playground/petstore-with-samples.json) file which can safely be replaced with any other valid OAS file.
 
-Put the desired rapidoc invocation into `discourse-rapidoc-theme-component`.
+Put the desired swagger-ui invocation into `discourse-swagger-theme-component`.
 Refer to the official Discourse theme component docs :point_up: for installation instructions.

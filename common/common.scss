@@ -8,7 +8,7 @@
   }
 }
 
-.cooked pre[data-code-wrap="rapidoc"] {
+.cooked pre[data-code-wrap="swagger"] {
   overflow-y: auto;
   margin: 1em 0;
   font-size: var(--font-0);
@@ -22,3 +22,6 @@
     font-size: 0;
   }
 }
+@import "swagger-ui.css";
+
+

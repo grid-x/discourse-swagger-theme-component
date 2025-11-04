@@ -148,9 +148,9 @@
         background-color: #e45735;
       }
     </style>
+    <link rel="stylesheet" type="text/css" href="../common/swagger-ui.css">
 
-    <script src="./component.js"></script>
-    <script src="./assets/rapidoc.min.js"></script>
+    <script type="module" src="./component.js"></script>
 
     <style>
      .cooked  {
@@ -371,7 +371,7 @@
           rel="stylesheet"
           data-target="desktop_theme"
           data-theme-id="8"
-          data-theme-name="discourse rapidoc"
+          data-theme-name="discourse swagger"
         />
         <link
           href="./assets/desktop_theme_1_b2ad059eec4a846243cb15c9bd6721ed9b52bbf4.css"
@@ -3678,8 +3678,11 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
                                     <div class="cooked">
                                    
                                       
-                                      <span id="component-wrapper"></span>
-                                
+                                <div id="swagger-ui"></div>
+
+<script src="../assets/swagger-ui-bundle.js"></script>
+<script src="../assets/swagger-ui-standalone-preset.js"></script>
+<script src="component.js"></script>
 
                                       <div
                                         class="cooked-selection-barrier"
