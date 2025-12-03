@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon --watch playground/component.html --exec 'http-server .  -o playground'",
-    "update-swagger": "npm update swagger-ui-dist && cp ./node_modules/swagger-ui-dist/swagger-ui-bundle.js ./node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js ./node_modules/swagger-ui-dist/swagger-ui.css ./assets/"
+    "update-swagger": "npm update swagger-ui-dist && cp ./node_modules/swagger-ui-dist/swagger-ui-bundle.js ./node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js ./assets/"
   },
   "devDependencies": {
     "@discourse/lint-configs": "^2.34.2",
