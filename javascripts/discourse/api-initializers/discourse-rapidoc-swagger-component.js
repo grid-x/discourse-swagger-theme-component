@@ -66,6 +66,6 @@ export default apiInitializer("1.13.0", (api) => {
       const id = helper ? `post_${helper.getModel().id}` : "composer";
       applySwaggerUi(elem, id);
     },
-    { id: `discourse-swagger-theme-component-${id}` }
+    { id: `discourse-swagger-theme-component-${id?id:"default"}` }
   );
 });
