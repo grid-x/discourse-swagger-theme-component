@@ -43,6 +43,7 @@ async function applySwaggerUi(element) {
             url: `${spec}`,
             dom_id: `#swagger-ui-${i}`,
             deepLinking: true,
+            requestSnippetsEnabled: true,
             presets: [
               SwaggerUIBundle.presets.apis,
               SwaggerUIStandalonePreset
